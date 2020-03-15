@@ -3,7 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .container {
+        --width: 100%;
+        width: calc(var(--width) * 2);
+        margin: 20px auto;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+    <style>
+      :root {
+        --hue: 300;
+      }
+      .primary {
+        /* hsl : hue saturation lightness */
+        background-color: hsl(var(--hue), 100%, 50%);
+      }
+      .danger {
+        background-color: hsl(calc(var(--hue) - 180), 100%, 50%);
+      }
+    </style>
     <title>CSS Calc Function</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container"></div>
+    <button class="primary">Primary</button>
+    <button class="danger">Danger</button>
+  </body>
 </html>
